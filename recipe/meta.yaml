@@ -1,4 +1,4 @@
-{% set version = "0.5.1" %}
+{% set version = "0.5.3" %}
 
 package:
   name: rdflib-sqlalchemy
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/rdflib-sqlalchemy/rdflib-sqlalchemy-{{ version }}.tar.gz
-  sha256: 641b784077459b656f73fffe7e7be211398d32bff32e965b6e668ebde773db48
+  sha256: a7a2e83d113db8e879477074ffac10b589d96c84007ad6ed067d1b8762d61e74
 
 build:
   noarch: python
