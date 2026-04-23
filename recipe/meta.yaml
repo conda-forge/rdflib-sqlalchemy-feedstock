@@ -5,21 +5,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/r/rdflib-sqlalchemy/rdflib-sqlalchemy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/r/rdflib-sqlalchemy/rdflib-sqlalchemy-{{ version }}.tar.gz
   sha256: a7a2e83d113db8e879477074ffac10b589d96c84007ad6ed067d1b8762d61e74
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
     - alembic >=0.8.8
-    - python >=3.7
+    - python >={{ python_min }}
     - rdflib >=4.0
     - six >=1.10.0
     - sqlalchemy >=1.1.4
@@ -32,6 +32,7 @@ test:
   requires:
     - pip
     - pytest-cov
+    - python {{ python_min }}
   commands:
     - pip check
 
